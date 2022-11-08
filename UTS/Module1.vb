@@ -40,6 +40,8 @@ Module Module1
             myinTiga = 0
             mySingle = 0
             input = ""
+
+            'Program Starts Here!
             NamaPegawai()
             JenisKelaminPegawai()
             StatusKawinPegawai()
@@ -56,6 +58,8 @@ Module Module1
             HitungGajibersih()
             TampilHasil()
             printNota()
+
+            'ASK TO START FROM BEGINNING
             ulangPilihan = True
             Do Until ulangPilihan = False
                 Write(" > Mulai Ulang T untuk mengakhiri? => ")
@@ -462,10 +466,13 @@ Module Module1
         If input = "Y" Then
             Dim mydate As String = DateTime.Now.ToString("dd'-'MM'-'yyyy-HH-mm-ss")
             Dim filename As String
-            filename = "Nota " & mydate & ".txt"
+            filename = "SLIP GAJI " & dataUser(0) & " " & mydate & ".txt"
             Dim myWriter As StreamWriter
 
+
+
             myWriter = My.Computer.FileSystem.OpenTextFileWriter("d:\" & filename, True)
+
 
             myWriter.WriteLine("--------------------------------------------------------------")
             myWriter.WriteLine("SLIP GAJI: " & dataUser(0))
@@ -491,6 +498,7 @@ Module Module1
             myWriter.WriteLine("                                PRINT: " & CurrentDateTime)
             myWriter.WriteLine("--------------------------------------------------------------")
             myWriter.Close()
+
         End If
 
 
